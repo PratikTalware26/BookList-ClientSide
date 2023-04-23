@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Register from './Components/Register';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignIn from './Components/SignIn';
+import Booklist from './Components/Booklist';
+import Addbook from './Components/Addbook';
+import Bookdetails from './Components/Bookdetails';
+import Editbook from './Components/Editbook';
+import { createContext, useState } from 'react';
+
+export const globalData= createContext()
 
 function App() {
+  const [token, setToken]= useState(null)
   return (
+    <globalData.Provider value={[token, setToken]}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/register' element={<Register/>}/>
+        <Route path="/" element={<SignIn/>}/>
+        <Route path='/home' element={<Booklist/>}/>
+        <Route path="/addbook" element={<Addbook/>}/>
+        <Route path="/bookdetails" element={<Bookdetails/>}/>
+        <Route path="/editbook" element={<Editbook/>}/>
+      </Routes>
+      </BrowserRouter>
     </div>
+    </globalData.Provider>
   );
 }
 

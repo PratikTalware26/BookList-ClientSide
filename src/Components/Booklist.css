@@ -1,0 +1,39 @@
+.booklist-cont{
+    min-height: 100vh;
+    background: #2B3E4F;
+    border: 5px solid;
+    padding: 10px;
+}
+.header-cont h1{
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+}
+.booklist-btn-cont{
+    display: flex;
+    justify-content: right;
+}
+.booklist-btn-cont button{
+    padding: 5px;
+    background: #FEC204;
+    border: none;
+    border-radius: 4px;
+}
+.books-cont{
+    border: 1px solid;
+    width: 300px;
+    background: white;
+}
+.bookimg-cont img{
+    width: 100%;
+}
+.bookscont-parent{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 30px 10px;
+}
+.desc-cont{
+    padding: 5px;
+}

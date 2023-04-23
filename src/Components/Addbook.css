@@ -1,0 +1,21 @@
+.addbook-cont{
+    min-height: 100vh;
+    text-align: center;
+    background: #2B3E4F;
+    padding: 40px;
+}
+.addbook-header{
+    color: white;
+}
+.addbook-header h1{
+    padding: 20px;
+}
+.show-btn-cont button{
+    padding: 5px;
+}
+.addbook-submit-btn-cont{
+    margin: 10px;
+}
+.addbook-submit-btn-cont button{
+    padding: 5px;
+}
