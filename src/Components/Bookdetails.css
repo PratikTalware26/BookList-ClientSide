@@ -3,3 +3,10 @@
     background: #2B3E4F;
     text-align: center;
 }
+.bookdetails-table-cont table{
+    width: 700px;
+    border: 1px solid;
+    color: white;
+    background: #242424;
+    margin: 20px auto;
+}

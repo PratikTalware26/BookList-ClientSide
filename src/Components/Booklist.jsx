@@ -3,12 +3,10 @@ import "./Booklist.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { globalData } from "../App";
 import axios from "axios";
-// import Bookdetails from "./Bookdetails";
 
 const Booklist = () => {
   const [token]= useContext(globalData)
   const [books, setBooks]= useState([])
-  // const [bookId, setBookid]= useState(null)
 
   const navigate= useNavigate()
 
@@ -27,10 +25,12 @@ const Booklist = () => {
   }, [])
 
   const handleBookClick=(id)=>{
-    // console.log(id)
-    // setBookid(id)
+    localStorage.setItem('bookId', id)
     navigate("/bookdetails")
+    
   }
+ 
+ 
 
   if(token){
     return (
@@ -45,9 +45,9 @@ const Booklist = () => {
           </Link>
         </div>
         {books?<div className="bookscont-parent">
-          {books.map((val)=>{
+          {books.map((val, i)=>{
             return(
-              <div className="books-cont" key={val._id} onClick={()=>handleBookClick(val._id)}>
+              <div className="books-cont" key={i} onClick={()=>handleBookClick(val._id)}>
               <div className="bookimg-cont"><img src="https://3.bp.blogspot.com/-QeKK2c_BEJ8/W5RNaB1e2LI/AAAAAAAADxA/fpeokLYVxBIhtjIRhu9HkViW1xhAMwfkwCLcBGAs/s1600/Castle%2BIn%2BThe%2BSky%2Bpre-made%2Bcover%2BPaperback.jpg" alt="bookphoto" /></div>
               <div className="desc-cont">
               <div>{val.title}</div>
@@ -57,13 +57,12 @@ const Booklist = () => {
               </div>
             )
           })}
-        </div>:""}
+        </div>: <h1>Loading...</h1>}
       </div>
-      {/* <Bookdetails bookId={ bookId }/> */}
       </>
     );
   }else{
-    <Navigate to="/"/>
+    return <Navigate to="/"/>
   }
 };
 

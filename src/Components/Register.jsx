@@ -16,7 +16,7 @@ const Register = () => {
   const formSubmit=async (data)=>{
     // console.log(data)
     try {
-        await axios.post("https://booklist-serverside.onrender.com/api/user",data)
+        await axios.post("http://localhost:8081/api/user",data)
         alert("registered successfully")
         navigate("/")
     } catch (error) {
