@@ -10,3 +10,6 @@
     background: #242424;
     margin: 20px auto;
 }
+.bookdetails-table-cont table tr td{
+    padding: 5px;
+}
