@@ -12,7 +12,7 @@ const Booklist = () => {
 
   const fetchBooks= async()=>{
     try {
-      const response= await axios.get("http://localhost:8081/api/books")
+      const response= await axios.get("https://booklist-serverside.onrender.com/api/books")
       // console.log(response)
       setBooks(response.data.books)
     } catch (error) {
